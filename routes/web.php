@@ -16,5 +16,9 @@ $router->get('/', function () use ($router) {
 });
 $router->group(['prefix' => 'api/clients'], function () use ($router) {
     $router->get('', 'ClientsController@index');
+    $router->get('{id}', 'ClientsController@show');
+    $router->post('', 'ClientsController@store');
+    $router->put('{id}', 'ClientsController@update');
+    $router->delete('{id}', 'ClientsController@destroy');
 });
 
